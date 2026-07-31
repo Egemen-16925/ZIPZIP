@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     private bool onStartShield = true;
     private bool isDead;
+    private bool isRecoveringFromHit;
     private int avatarIndex;
     private float flapPoseUntil;
     private float floorTop = float.NegativeInfinity;
@@ -86,6 +87,7 @@ public class Player : MonoBehaviour
     {
         OpenAvatar();
         isDead = false;
+        isRecoveringFromHit = false;
         rb.bodyType = RigidbodyType2D.Kinematic;
         onStartShield = true;
         CancelInvoke(nameof(CloseShield));
@@ -261,12 +263,57 @@ public class Player : MonoBehaviour
 
         if (other.CompareTag("Obstacle"))
         {
-            Die(true);
+            TakeObstacleDamage();
         }
         else if (other.CompareTag("Bottom"))
         {
             Die(false);
         }
+    }
+
+    private void TakeObstacleDamage()
+    {
+        if (isDead || isRecoveringFromHit)
+        {
+            return;
+        }
+
+        isRecoveringFromHit = true;
+        onStartShield = true;
+        Health = Mathf.Max(0f, Health - 35f);
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = Health / 100f;
+        }
+
+        SoundManager.Instance.PlaySound(SoundType.HitSound);
+        CameraParent.DOShakePosition(shakeDuration, shakePower, shakeVibrato);
+        transform.DOKill();
+
+        if (Health <= 0f)
+        {
+            Die(false);
+            return;
+        }
+
+        canMove = false;
+        GameManager.Instance.mover.canMove = false;
+        GameManager.Instance.mover.moveSpawner = true;
+        transform.DOMoveX(transform.position.x - pushAmount, pushDuration).OnComplete(AfterDamage);
+    }
+
+    private void AfterDamage()
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+        canMove = true;
+        isRecoveringFromHit = false;
+        onStartShield = false;
+        GameManager.Instance.mover.canMove = true;
+        GameManager.Instance.mover.moveSpawner = false;
     }
 
     private void Die(bool playHitSound)
@@ -277,6 +324,7 @@ public class Player : MonoBehaviour
         }
 
         isDead = true;
+        isRecoveringFromHit = false;
         canMove = false;
         Health = 0f;
         if (healthBar != null)
@@ -364,6 +412,12 @@ public class Player : MonoBehaviour
     public void SetAvatarIndex(int i)
     {
         avatarIndex = i;
+    }
+
+    public void PreviewAvatar(int i)
+    {
+        avatarIndex = Mathf.Clamp(i, 0, Avatars.Count - 1);
+        OpenAvatar();
     }
 }
 }

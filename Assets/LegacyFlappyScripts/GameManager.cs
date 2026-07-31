@@ -117,6 +117,13 @@ public class GameManager : MonoBehaviour
         // Progress is time-based. Passing an obstacle must not change it.
     }
 
+    public void ConfigureMenuUi(GameObject menuPanel, GameObject retryButton, GameObject gameOverPanel)
+    {
+        playButton = menuPanel;
+        restartButton = retryButton;
+        gameOver = gameOverPanel;
+    }
+
     private void Update()
     {
         if (isRunActive)
