@@ -22,7 +22,7 @@ public class BackgroundSystem : MonoBehaviour
     [SerializeField, Min(0.25f)] private float _crossfadeDuration = 5f;
 
     [Header("Parallax")]
-    [SerializeField, Min(0f)] private float _foregroundSpeed = 0.45f;
+    [SerializeField, HideInInspector, Min(0f)] private float _foregroundSpeed = 0.45f;
     [SerializeField] private int _baseSortingOrder = -20;
     [SerializeField] private int _foregroundSortingOrder = -7;
 
@@ -360,6 +360,13 @@ public class BackgroundSystem : MonoBehaviour
 
         isMoving = initialized;
     }
+
+    public void SetForegroundSpeed(float speed)
+    {
+        _foregroundSpeed = Mathf.Max(0f, speed);
+    }
+
+    public float ForegroundSpeed => _foregroundSpeed;
 
     public void StopMoving()
     {

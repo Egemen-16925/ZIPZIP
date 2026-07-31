@@ -23,10 +23,9 @@ public class PauseMenu : MonoBehaviour
         _soundSlider.onValueChanged.AddListener(ChangeSound);
         _brightnessSlider.value = brightnessValue;
 
-        if (!isSoundGot)
-            _soundSlider.value = PlayBoxLauncherDataManager.GetSound;
-        else
-            _soundSlider.value = AudioListener.volume;
+        float configuredVolume = Mathf.Clamp01(Legacy2D.PlayBoxLauncherDataManager.GetSound);
+        _soundSlider.SetValueWithoutNotify(configuredVolume);
+        AudioListener.volume = configuredVolume;
 
         isSoundGot = true;
     }
@@ -72,7 +71,7 @@ public class PauseMenu : MonoBehaviour
 
     private void ChangeSound(float value)
     {
-        PlayBoxLauncherDataManager.SetSound(value);
+        Legacy2D.PlayBoxLauncherDataManager.SetSound(value);
         AudioListener.volume = value;
     }
 

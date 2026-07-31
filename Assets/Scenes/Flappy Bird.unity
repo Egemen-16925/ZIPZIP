@@ -364,6 +364,7 @@ MonoBehaviour:
   bgSystem: {fileID: 1949728354}
   frameText: {fileID: 1280670070}
   mover: {fileID: 1604746037}
+  groundFlowSpeed: 1.35
 --- !u!4 &149568775
 Transform:
   m_ObjectHideFlags: 0
@@ -16130,7 +16131,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eff00c80bfc7037408a0f0582f0d6f24, type: 3}
   _themeDuration: 28
   _crossfadeDuration: 5
-  _foregroundSpeed: 0.45
+  _foregroundSpeed: 1.35
   _baseSortingOrder: -20
   _foregroundSortingOrder: -7
 --- !u!50 &1949728355

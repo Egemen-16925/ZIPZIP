@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI frameText;
     public PipeMover mover;
 
+    [Header("Ground Flow")]
+    [SerializeField, Min(0f)] private float groundFlowSpeed = 1.35f;
+
     public int score { get; private set; } = 0;
 
     private float scoreTimer;
@@ -43,11 +46,26 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        ApplyGroundFlowSpeed();
         Pause();
         SoundManager.Instance.PlaySound(SoundType.GameBackgroundMusic);
 
         Application.targetFrameRate = 200;
         QualitySettings.vSyncCount = 1;
+    }
+
+    private void OnValidate()
+    {
+        groundFlowSpeed = Mathf.Max(0f, groundFlowSpeed);
+        ApplyGroundFlowSpeed();
+    }
+
+    private void ApplyGroundFlowSpeed()
+    {
+        if (bgSystem != null)
+        {
+            bgSystem.SetForegroundSpeed(groundFlowSpeed);
+        }
     }
 
     public void Pause()
