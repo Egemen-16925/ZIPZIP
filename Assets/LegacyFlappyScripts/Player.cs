@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public float strength = 5f;
     public float gravity = -9.81f;
     public float tilt = 5f;
+    [Tooltip("KediKutusu'nun ziplama sirasinda normal egimin ne kadarini kullanacagini belirler. 0 = donmez, 1 = tam egim.")]
+    [Range(0f, 1f)] public float catBoxTiltMultiplier = 0.35f;
     public float pushAmount = 5f;
     public float pushDuration = 5f;
 
@@ -155,7 +157,10 @@ public class Player : MonoBehaviour
 
         if (Avatars.Count > avatarIndex && Avatars[avatarIndex] != null)
         {
-            Avatars[avatarIndex].transform.localRotation = Quaternion.Euler(targetTilt, 90f, 0f);
+            float avatarTilt = avatarIndex == 3
+                ? targetTilt * catBoxTiltMultiplier
+                : targetTilt;
+            Avatars[avatarIndex].transform.localRotation = Quaternion.Euler(avatarTilt, 90f, 0f);
         }
 
         Vector3 cameraPosition = camera.position;
