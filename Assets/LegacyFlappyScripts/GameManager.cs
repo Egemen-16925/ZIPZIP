@@ -1,0 +1,108 @@
+namespace Legacy2D {
+using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+[DefaultExecutionOrder(-1)]
+public class GameManager : MonoBehaviour
+{
+    public static GameManager Instance { get; private set; }
+
+    [SerializeField] private Player player;
+    [SerializeField] private Spawner spawner;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject restartButton;
+    [SerializeField] private GameObject gameOver;
+    [SerializeField] private BackgroundSystem bgSystem;
+    [SerializeField] private TextMeshProUGUI frameText;
+    public PipeMover mover;
+
+    public int score { get; private set; } = 0;
+
+    private void Awake()
+    {
+        if (Instance != null) {
+            DestroyImmediate(gameObject);
+        } else {
+            Instance = this;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this) {
+            Instance = null;
+        }
+    }
+
+    private void Start()
+    {
+        Pause();
+        SoundManager.Instance.PlaySound(SoundType.GameBackgroundMusic);
+
+        Application.targetFrameRate = 200;
+        QualitySettings.vSyncCount = 1;
+    }
+
+    public void Pause()
+    {
+        player.enabled = false;
+        mover.canMove = false;
+    }
+
+    public void Play()
+    {
+        player.OnPlay();
+        mover.canMove = true;
+        mover.moveSpawner = false;
+        score = 0;
+        scoreText.text = score.ToString();
+        
+        playButton.SetActive(false);
+
+        player.enabled = true;
+        Time.timeScale = 1f;
+        spawner.StartSpawning();
+        bgSystem.StartMoving();
+    }
+
+    public void GameOver()
+    {
+        bgSystem.StopMoving();
+        restartButton.SetActive(true);
+        gameOver.SetActive(true);
+        spawner.StopSpawning();
+        SoundManager.Instance.StopSound(SoundType.GameBackgroundMusic);
+        SoundManager.Instance.PlaySound(SoundType.DieSound);
+        bool isGameEnded = true;
+        UnityPipeCommunication.ClearLogFile();
+        UnityPipeCommunication.SendMessageToElectron($"SCORE:{4}:{score}:{DateTime.Now}:{PlayBoxLauncherDataManager.RoundToNearestVolume()}");
+        Pause();
+    }
+
+    public void Restart()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
+
+    public void IncreaseScore()
+    {
+        score++;
+        scoreText.text = score.ToString();
+        scoreText.GetComponent<Animation>().Play();
+        UnityPipeCommunication.ClearLogFile();
+        bool isGameEnded = false;
+        UnityPipeCommunication.SendMessageToElectron($"SCORE:{4}:{score}:{DateTime.Now}:{PlayBoxLauncherDataManager.RoundToNearestVolume()}");
+
+    }
+
+    private void Update()
+    {
+        frameText.text = ((int)(1.0f / Time.deltaTime)).ToString();
+    }
+}
+
+}

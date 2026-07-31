@@ -1,0 +1,202 @@
+{
+"skeleton": {
+	"hash": "UsZyLgHJtc8",
+	"spine": "4.0.17",
+	"x": -113.61,
+	"y": 101.96,
+	"width": 216,
+	"height": 150,
+	"images": "./Images/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "Body", "parent": "root", "x": 5.15, "y": 176.03 },
+	{ "name": "Wing_F", "parent": "Body", "length": 17.96, "rotation": -92.29, "x": -1.85, "y": -17.11 },
+	{ "name": "Wing_B", "parent": "Body", "length": 17.25, "rotation": -87.61, "x": 11.14, "y": -11.05 },
+	{ "name": "Mouth_B", "parent": "Body", "length": 10.92, "rotation": 9.46, "x": 25.41, "y": -20.59 },
+	{ "name": "Mouth_T", "parent": "Body", "length": 11.27, "rotation": 9.16, "x": 23.3, "y": -6.04 },
+	{ "name": "Hair", "parent": "Body", "length": 16.7, "rotation": 154.54, "x": 2.97, "y": 23.55 },
+	{ "name": "Tails", "parent": "Body", "length": 17.95, "rotation": 178.85, "x": -29.22, "y": -12.88 }
+],
+"slots": [
+	{ "name": "Box", "bone": "root", "color": "ffffff00", "attachment": "Box" },
+	{ "name": "Wing_B", "bone": "Wing_B", "attachment": "Wing_B" },
+	{ "name": "Tails", "bone": "Tails", "attachment": "Tails" },
+	{ "name": "Hair", "bone": "Hair" },
+	{ "name": "Mouth_B", "bone": "Mouth_B", "attachment": "Mouth_B" },
+	{ "name": "Mouth_T", "bone": "Mouth_T", "attachment": "Mouth_T" },
+	{ "name": "Body", "bone": "Body", "attachment": "Body" },
+	{ "name": "Wing_F", "bone": "Wing_F", "attachment": "Wing_F" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Body": {
+				"Body": { "x": -1.65, "y": -0.03, "width": 65, "height": 63 }
+			},
+			"Box": {
+				"Box": { "x": -5.61, "y": 176.96, "width": 216, "height": 150 }
+			},
+			"Hair": {
+				"Hair": { "x": 17.48, "y": 2.49, "rotation": -154.54, "width": 37, "height": 16 }
+			},
+			"Mouth_B": {
+				"Mouth_B": { "x": 5.85, "y": -1.19, "rotation": -9.46, "width": 22, "height": 12 }
+			},
+			"Mouth_T": {
+				"Mouth_T": { "x": 10.49, "y": 3.54, "rotation": -9.16, "width": 43, "height": 32 }
+			},
+			"Tails": {
+				"Tails": { "x": 13.71, "y": 0.61, "rotation": -178.85, "width": 41, "height": 34 }
+			},
+			"Wing_B": {
+				"Wing_B": { "x": 13.52, "y": -16.12, "rotation": 87.61, "width": 50, "height": 38 }
+			},
+			"Wing_F": {
+				"Wing_F": { "x": 16.22, "y": -14.52, "rotation": 92.29, "width": 51, "height": 39 }
+			}
+		}
+	}
+],
+"animations": {
+	"Fly": {
+		"bones": {
+			"Body": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": -4.96 },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Wing_F": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": -0.802 },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Wing_B": {
+				"rotate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.3333, "x": -0.521 },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Mouth_B": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": -34.02 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Mouth_T": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 19.99 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Hair": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": -15.74 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			},
+			"Tails": {
+				"rotate": [
+					{},
+					{ "time": 0.3333, "value": 21.05 },
+					{ "time": 0.6667 }
+				],
+				"translate": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"scale": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				],
+				"shear": [
+					{ "curve": "stepped" },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	}
+}
+}
