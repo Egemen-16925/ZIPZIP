@@ -44,8 +44,11 @@ public class BackgroundSystem : MonoBehaviour
             return;
         Transform collideObject = collision.transform;
         collideObject.position = (Vector2)lastSprite.position + (Vector2.right * distance);
+        SpriteRenderer collideRenderer = collideObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer lastRenderer = lastSprite.GetComponent<SpriteRenderer>();
+        collideRenderer.flipX = !lastRenderer.flipX;
         lastSprite = collideObject;
-        collideObject.GetComponent<SpriteRenderer>().sprite = _sprites[index];
+        collideRenderer.sprite = _sprites[index];
         index++;
         if (index >= _sprites.Count)
             index = _sprites.Count - 2;
@@ -74,6 +77,9 @@ public class BackgroundSystem : MonoBehaviour
         _firstSprite.sprite = _sprites[0];
         _secondSprite.sprite = _sprites[1];
         _thirdSprite.sprite = _sprites[2];
+        _firstSprite.flipX = false;
+        _secondSprite.flipX = true;
+        _thirdSprite.flipX = false;
 
         lastSprite = _thirdSprite.transform;
     }

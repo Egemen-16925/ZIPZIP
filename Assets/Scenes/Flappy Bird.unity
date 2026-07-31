@@ -11649,7 +11649,7 @@ GameObject:
   - component: {fileID: 473968574}
   - component: {fileID: 473968573}
   - component: {fileID: 473968575}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ThirdSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11666,7 +11666,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.700946, y: 0, z: -1}
-  m_LocalScale: {x: 0.017621696, y: 0.039384495, z: 0.23630697}
+  m_LocalScale: {x: 0.04173481, y: 0.088270456, z: 0.23630697}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1949728353}
@@ -11747,7 +11747,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -6
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: c9b8b20a97c38284fb99a02e254fac64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11795,13 +11795,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.4, y: 21.6}
+    oldSize: {x: 16.72, y: 9.41}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 38.4, y: 21.6}
+  m_Size: {x: 16.72, y: 9.41}
   m_EdgeRadius: 0
 --- !u!1 &503068435
 GameObject:
@@ -13098,7 +13098,7 @@ GameObject:
   - component: {fileID: 837399681}
   - component: {fileID: 837399680}
   - component: {fileID: 837399682}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FirstSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13115,7 +13115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.348, y: 0, z: -1}
-  m_LocalScale: {x: 0.017621696, y: 0.039384495, z: 0.23630697}
+  m_LocalScale: {x: 0.04173481, y: 0.088270456, z: 0.23630697}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1949728353}
@@ -13196,7 +13196,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: afd47917574c40c43baf1fdff0b4bbd1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13244,13 +13244,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.4, y: 21.6}
+    oldSize: {x: 16.72, y: 9.41}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 38.4, y: 21.6}
+  m_Size: {x: 16.72, y: 9.41}
   m_EdgeRadius: 0
 --- !u!1 &837430648
 GameObject:
@@ -15364,7 +15364,7 @@ GameObject:
   - component: {fileID: 1547365696}
   - component: {fileID: 1547365695}
   - component: {fileID: 1547365697}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SecondSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15381,7 +15381,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.024473, y: 0, z: -1}
-  m_LocalScale: {x: 0.017621696, y: 0.039384495, z: 0.23630697}
+  m_LocalScale: {x: 0.04173481, y: 0.088270456, z: 0.23630697}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1949728353}
@@ -15462,9 +15462,9 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -8
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: b47089ee10de16241a0477fd1945a23f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 38.399998, y: 21.599998}
@@ -15510,13 +15510,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.4, y: 21.6}
+    oldSize: {x: 16.72, y: 9.41}
     newSize: {x: 38.399998, y: 21.599998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 38.4, y: 21.6}
+  m_Size: {x: 16.72, y: 9.41}
   m_EdgeRadius: 0
 --- !u!1 &1558162491
 GameObject:
@@ -16023,34 +16023,34 @@ MonoBehaviour:
   _speed: 0.1
   _reduceAmount: 0
   _sprites:
-  - {fileID: 21300000, guid: afd47917574c40c43baf1fdff0b4bbd1, type: 3}
-  - {fileID: 21300000, guid: b47089ee10de16241a0477fd1945a23f, type: 3}
-  - {fileID: 21300000, guid: c9b8b20a97c38284fb99a02e254fac64, type: 3}
-  - {fileID: 21300000, guid: 0a334a5594b0b434eb55cb64451797b2, type: 3}
-  - {fileID: 21300000, guid: 5e34a30954f110545b42cda0b89b1c44, type: 3}
-  - {fileID: 21300000, guid: b5b8d9d1a3e5d1d43b3bcc7197e4dc59, type: 3}
-  - {fileID: 21300000, guid: 32324f168b4e4cc4fb9a73ddd5877f3e, type: 3}
-  - {fileID: 21300000, guid: e59778a87fb500e45a33bd5d4d0e522a, type: 3}
-  - {fileID: 21300000, guid: 638e0dc3304ccdd4b8aea0378f3ff5d6, type: 3}
-  - {fileID: 21300000, guid: 0717c164b13cc5546a51fbb81c35c2a3, type: 3}
-  - {fileID: 21300000, guid: 048b6aa7fb6795f4dad50f989dfadd58, type: 3}
-  - {fileID: 21300000, guid: 4da04320618ec5a4f8d9f182723b0a42, type: 3}
-  - {fileID: 21300000, guid: 0f30dc8ee2f65d1458fdbc7af4c77652, type: 3}
-  - {fileID: 21300000, guid: 83802cc749034a04eaa32252609868b6, type: 3}
-  - {fileID: 21300000, guid: c330e007332f2024f986e1b090929d11, type: 3}
-  - {fileID: 21300000, guid: 56f5255d37d0a8942a61ac0e0f04ca52, type: 3}
-  - {fileID: 21300000, guid: 6e03b7906d0034d48bfa5953d11c6979, type: 3}
-  - {fileID: 21300000, guid: dc51198121dbec844bad9b58b7d6b268, type: 3}
-  - {fileID: 21300000, guid: 60afd4b27d227d2479f5681543aa0260, type: 3}
-  - {fileID: 21300000, guid: 834b16fba2b50094d804f8ed5ac94352, type: 3}
-  - {fileID: 21300000, guid: 8f457aa5cd4f40c48868c1404064518a, type: 3}
-  - {fileID: 21300000, guid: e8d4dfe9654bcdf4d94483822b5231c0, type: 3}
-  - {fileID: 21300000, guid: eec7fca257ed99845863077ea54d639a, type: 3}
-  - {fileID: 21300000, guid: b7dd8cef2d0e7a64683959de7a07f425, type: 3}
-  - {fileID: 21300000, guid: 9418652f46f58444e9cac4a7a4902b53, type: 3}
-  - {fileID: 21300000, guid: 75abdf11766c123448c5bf097504b0ce, type: 3}
-  - {fileID: 21300000, guid: ea9823bceb6495c4b83de196b2d57690, type: 3}
-  - {fileID: 21300000, guid: 7e07a691ce30fad41a0ba99d970fd54d, type: 3}
+  - {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
+  - {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
+  - {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
+  - {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
+  - {fileID: 21300000, guid: a188afaee49506e43a38b1358afb5cd3, type: 3}
+  - {fileID: 21300000, guid: 858e6716922658242bde37ba0ad1aec7, type: 3}
+  - {fileID: 21300000, guid: 858e6716922658242bde37ba0ad1aec7, type: 3}
+  - {fileID: 21300000, guid: 858e6716922658242bde37ba0ad1aec7, type: 3}
+  - {fileID: 21300000, guid: c200fe7704ff85b4282926856a9f254e, type: 3}
+  - {fileID: 21300000, guid: c200fe7704ff85b4282926856a9f254e, type: 3}
+  - {fileID: 21300000, guid: a31cf1abb67d061429ce900adfd20932, type: 3}
+  - {fileID: 21300000, guid: a31cf1abb67d061429ce900adfd20932, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
+  - {fileID: 21300000, guid: 72a6dcb51d7b93c408413d9ec7b7fdc4, type: 3}
   _obstacleChangeIndexes: 0000000005000000080000000a0000000c000000
   _spawner: {fileID: 2105631072}
 --- !u!50 &1949728355

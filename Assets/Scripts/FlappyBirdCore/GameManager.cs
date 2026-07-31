@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     public int score { get; private set; } = 0;
 
+    private float scoreTimer;
+    private bool isRunActive;
+
     private void Awake()
     {
         if (Instance != null) {
@@ -49,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+        isRunActive = false;
         player.enabled = false;
         mover.canMove = false;
     }
@@ -59,6 +63,8 @@ public class GameManager : MonoBehaviour
         mover.canMove = true;
         mover.moveSpawner = false;
         score = 0;
+        scoreTimer = 0f;
+        isRunActive = true;
         if (scoreText != null) scoreText.text = score.ToString();
         
         if (playButton != null) playButton.SetActive(false);
@@ -88,17 +94,28 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScore()
     {
-        score++;
-        if (scoreText != null) 
-        {
-            scoreText.text = score.ToString();
-            var anim = scoreText.GetComponent<Animation>();
-            if (anim != null) anim.Play();
-        }
+        // Progress is time-based. Passing an obstacle must not change it.
     }
 
     private void Update()
     {
+        if (isRunActive)
+        {
+            scoreTimer += Time.deltaTime;
+            while (scoreTimer >= 1f)
+            {
+                scoreTimer -= 1f;
+                score++;
+
+                if (scoreText != null)
+                {
+                    scoreText.text = score.ToString();
+                    var anim = scoreText.GetComponent<Animation>();
+                    if (anim != null) anim.Play();
+                }
+            }
+        }
+
         if (frameText != null) frameText.text = ((int)(1.0f / Time.deltaTime)).ToString();
     }
 }
