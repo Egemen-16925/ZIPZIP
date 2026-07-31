@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 188473754}
   m_Layer: 0
   m_Name: Ground (3)
-  m_TagString: Bottom
+  m_TagString: Ceiling
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12194,6 +12194,7 @@ GameObject:
   - component: {fileID: 527830925}
   - component: {fileID: 527830926}
   - component: {fileID: 527830928}
+  - component: {fileID: 527830929}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -12242,9 +12243,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &527830928
 MonoBehaviour:
@@ -12280,6 +12281,44 @@ MonoBehaviour:
   shakeVibrato: 1
   _smokeParticles:
   - {fileID: 358937349}
+  hitboxRadius: 0.38
+  ceilingPadding: 0.03
+--- !u!58 &527830929
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527830923}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.38
 --- !u!1 &567830823
 GameObject:
   m_ObjectHideFlags: 0
@@ -12687,6 +12726,30 @@ PrefabInstance:
     - target: {fileID: 6677038969126957126, guid: 18e0d60596af9f8489e0fe08397a5988, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497066228027458846, guid: 18e0d60596af9f8489e0fe08397a5988, type: 3}
+      propertyPath: flapAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497066228027458846, guid: 18e0d60596af9f8489e0fe08397a5988, type: 3}
+      propertyPath: invertWing2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497066228027458846, guid: 18e0d60596af9f8489e0fe08397a5988, type: 3}
+      propertyPath: wing1MaxAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497066228027458846, guid: 18e0d60596af9f8489e0fe08397a5988, type: 3}
+      propertyPath: wing1MinAngle
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497066228027458846, guid: 18e0d60596af9f8489e0fe08397a5988, type: 3}
+      propertyPath: wing2MaxAngle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497066228027458846, guid: 18e0d60596af9f8489e0fe08397a5988, type: 3}
+      propertyPath: wing2MinAngle
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
