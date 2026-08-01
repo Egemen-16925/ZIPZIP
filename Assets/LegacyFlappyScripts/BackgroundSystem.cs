@@ -23,6 +23,7 @@ public class BackgroundSystem : MonoBehaviour
 
     [Header("Parallax")]
     [SerializeField, HideInInspector, Min(0f)] private float _foregroundSpeed = 0.45f;
+    [SerializeField] private float _foregroundYOffset = -0.55f;
     [SerializeField] private int _baseSortingOrder = -20;
     [SerializeField] private int _foregroundSortingOrder = -7;
 
@@ -180,7 +181,10 @@ public class BackgroundSystem : MonoBehaviour
 
             if (resetForegroundPositions)
             {
-                Vector3 position = new Vector3(cameraPosition.x + (i * viewportWidth), cameraPosition.y, 0f);
+                Vector3 position = new Vector3(
+                    cameraPosition.x + (i * viewportWidth),
+                    cameraPosition.y + _foregroundYOffset,
+                    0f);
                 currentForeground[i].transform.position = position;
                 nextForeground[i].transform.position = position;
             }
@@ -255,7 +259,7 @@ public class BackgroundSystem : MonoBehaviour
             SpriteRenderer other = currentForeground[1 - i];
             renderer.transform.position = new Vector3(
                 other.transform.position.x + viewportWidth - 0.01f,
-                targetCamera.transform.position.y,
+                targetCamera.transform.position.y + _foregroundYOffset,
                 renderer.transform.position.z);
             renderer.flipX = !other.flipX;
         }

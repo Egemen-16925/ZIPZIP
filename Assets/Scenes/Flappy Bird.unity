@@ -12451,6 +12451,7 @@ MonoBehaviour:
   _themeDuration: 28
   _crossfadeDuration: 5
   _foregroundSpeed: 4
+  _foregroundYOffset: -0.55
   _baseSortingOrder: -20
   _foregroundSortingOrder: -7
 --- !u!50 &1949728355
